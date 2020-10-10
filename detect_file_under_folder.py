@@ -8,7 +8,7 @@ import os
 #         return True
 #     else:
 #         return False
-
+files=[]
 path=input('please input the path you want to detect')
 print(path)
 path=path.lstrip('"')
@@ -24,14 +24,18 @@ for folder1 in os.listdir():
         print(str(folder1)+'第二层下的文件有这些')
         print(os.listdir())#打印出第二层的文件名
         for folder2 in os.listdir():#往下是进入第三层
-            if not os.path.isfile(os.getcwd()+'\\'+folder2):
-                os.chdir(os.getcwd()+'\\'+str(folder2))
-                print(os.getcwd())
+            if not os.path.isfile(path+'\\'+folder1+'\\'+folder2):
+                os.chdir(path+'\\'+folder1+'\\'+folder2)
+                print('第三层下的文件夹有这些')
+                print(os.listdir())
+                for folder3 in os.listdir():
+                    print(folder3)
+                    files.append(folder3)
             else:
-                continue
-        # print('now i am in the second folder')
+                files.append(folder2)
     else:
-        continue
+        files.append(folder1)
+print(files)
 
 
 
