@@ -1,4 +1,6 @@
 import os
+#在程序最开始增加一些注释，看能否提交到GitHub上
+
 # def is_folder(pathname):
 #     if os.path.isdir(pathname):
 #         return True
